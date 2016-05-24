@@ -4,4 +4,5 @@
   <a href="<%= new_session_url %>">Login</a>
 <% else %>
   Welcome
+  <%= my_button_to(session_url, "LOGOUT", "DELETE" ) %>
 <% end %>
