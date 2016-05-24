@@ -1,0 +1,22 @@
+{
+  "name": "jewelry_app",
+  "authors": [
+    "Arcane52689 <tjenkins52689@gmail.com>"
+  ],
+  "description": "a site for dealing with my aunts",
+  "main": "''",
+  "moduleType": [],
+  "keywords": [
+    "none"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
