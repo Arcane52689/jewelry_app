@@ -1,0 +1,7 @@
+
+
+<% if !logged_in? %>
+  <a href="<%= new_session_url %>">Login</a>
+<% else %>
+  Welcome
+<% end %>
