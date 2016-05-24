@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
     session_token = user.sessions.create.token
     session[:session_token] = session_token
   end
+  
 end

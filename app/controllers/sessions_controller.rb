@@ -18,7 +18,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    @session = Session.find_by(token: token)
+    @session.deactivate
+    redirect_to root_url
   end
 
 
