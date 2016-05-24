@@ -2,7 +2,14 @@
 
 <% if !logged_in? %>
   <a href="<%= new_session_url %>">Login</a>
+
+
 <% else %>
-  Welcome
+
   <%= my_button_to(session_url, "LOGOUT", "DELETE" ) %>
+
+  <my-header></my-header>
+  <main ng-view>
+
+  </main>
 <% end %>

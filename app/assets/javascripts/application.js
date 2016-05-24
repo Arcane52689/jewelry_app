@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require angular-route/angular-route
+//= require ./ModelFactory
 //= require_tree ./templates
+//= require ./beneficiary
+//= require_tree ./models
 //= require_tree .
