@@ -15,7 +15,8 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require ./ModelFactory
+//= require angular-rails-templates
 //= require_tree ./templates
+//= require ./components_config
 //= require ./beneficiary
-//= require_tree ./models
-//= require_tree .
+//= require_tree ./components

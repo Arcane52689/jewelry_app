@@ -1,11 +1,7 @@
 
 
-angular.module("StandAloneControllers", ['AngularModelFactory'])
 
-
-
-
-var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute'])
+var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'StaticControllers']);
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -14,3 +10,4 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'HomeCtrl',
     controllerAs: 'home'
   })
+}])

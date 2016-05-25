@@ -5,7 +5,9 @@
 
 
 <% else %>
-
+  <script type="text/javascript">
+    window.user_id = <%= current_user.id %>
+  </script>
   <%= my_button_to(session_url, "LOGOUT", "DELETE" ) %>
 
   <my-header></my-header>
