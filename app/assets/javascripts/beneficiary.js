@@ -1,5 +1,5 @@
 
-
+window.administer = false
 
 var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'StaticControllers']);
 

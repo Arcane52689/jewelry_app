@@ -1,10 +1,23 @@
-angular.module('AppModels').factory('User', ['BaseModel', function(BaseModel) {
+angular.module('AppModels').factory('User', ['BaseModel', 'BaseCollection', 'Estate', 'BaseCollection', function(BaseModel, BaseCollection, Estate) {
   var User = function(data) {
     this.urlBase = "./api/users"
     this.initialize(data);
   }
 
   BaseModel.parentOf(User);
+
+  User.prototype.parse = function(data) {
+    if (!this.administered_estates) {
+      this.administered_estates =  new BaseCollection({
+        model: Estate,
+      })
+    }
+    if (data.administered_estates) {
+      this.administered_estates.addModels(data.administered_estates);
+      delete data.administered_estates
+    }
+    return data;
+  }
 
 
   return User;
@@ -13,7 +26,7 @@ angular.module('AppModels').factory('User', ['BaseModel', function(BaseModel) {
 
 
 angular.module('AppModels').factory('CurrentUser', ['User', function(User) {
-  CurrentUser = new User({id: window.user_id});
+  var CurrentUser = new User({id: window.user_id});
   CurrentUser.fetch();
   return CurrentUser;
 

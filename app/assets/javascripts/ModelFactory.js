@@ -178,8 +178,13 @@
 
     }
 
+
+
     BaseModel.prototype.updateAttributes = function(data) {
       data = data || {}
+      if (this.parse) {
+        data = this.parse(data);
+      }
       this.attributes = this.attributes || {};
       for (key in data){
         if (data.hasOwnProperty) {
@@ -509,9 +514,10 @@ ModelFactory.factory('BaseCollection', ['$http', 'BaseModel', 'Listenable', func
   }
 
   BaseCollection.prototype.sort = function(callback, options) {
+    options = options || {};
     callback = callback || this.compare.bind(this);
     this.models.sort(callback);
-    if (!option.silent) {
+    if (!options.silent) {
       this.trigger("sort");
     }
     return this;
