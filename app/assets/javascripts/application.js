@@ -18,5 +18,7 @@
 //= require angular-rails-templates
 //= require_tree ./templates
 //= require ./components_config
+//= require_tree ./models
 //= require ./beneficiary
+//= require ./admin
 //= require_tree ./components

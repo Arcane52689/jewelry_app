@@ -6,7 +6,10 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body <%= 'ng-app=BeneficiaryApp' if logged_in? %>>
+<body <% if logged_in? %>
+  ng-app= <%= current_user.is_admin? ? 'AdminApp' : 'BeneficiaryApp'%>
+  <% end %>
+  >
 
 
 <%= yield %>
