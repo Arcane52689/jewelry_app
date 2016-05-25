@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :sessions
 
+  has_many :memberships
+  has_many :estates, through: :memberships, as: :estate
+
   validates :name, presence: true
   validates :password, length: { minimum: 8, allow_nil: true }
   validates :email, presence: true
@@ -11,6 +14,10 @@ class User < ActiveRecord::Base
 
   def is_admin?
     self.is_admin
+  end
+
+  def administered_estates
+    self.memberships.includes(:estate).where(is_admin: true).map(&:estate)
   end
 
 end
