@@ -1,0 +1,16 @@
+<form class="items-form">
+  <ul class="attributes">
+    <li>
+      Name: <input type="text" name="name" ng-bind="form.item.attributes.name">
+    </li>
+    <li>
+      Appraised Value: <input type="number" name="itme[value]" ng-bind="form.item.attributes.appraised_value">
+    </li>
+    <li>
+      description: <textarea name="item[description]" rows="8" cols="40" ng-bind="form.item.attributes.description"></textarea>
+    </li>
+
+  </ul>
+
+  <button class="submit" ng-click="form.submit()">Submit</button>
+</form>

@@ -1,11 +1,5 @@
 class Api::ItemsController < ApplicationController
 
-
-  before_action :user_belongs_to_estate, only: [:show]
-
-  before_action :user_can_manage_estate, only: [:create, :update]
-
-
   def show
 
   end
@@ -20,7 +14,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-    
+
   end
 
 
