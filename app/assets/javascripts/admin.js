@@ -1,4 +1,4 @@
-var app = angular.module('AdminApp', ['templates', 'ngRoute', 'StaticControllers', 'Utilities']);
+var app = angular.module('AdminApp', ['templates', 'ngRoute', 'StaticControllers', 'Utilities', 'AdminHeader']);
 
 
 window.administer = true;
