@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
+
+  def user_belongs_to_estate
+    current_user.memberships.exists?(estate_id: params[:id])
+  end
+
+  def can_modify_estate
+    current_user.can_modify_estate(params[:id])
+  end
+
 end

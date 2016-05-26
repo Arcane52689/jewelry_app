@@ -1,3 +1,3 @@
 class EstateSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :bene
 end
