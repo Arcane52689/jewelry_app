@@ -1,13 +1,24 @@
 <div class="items-container">
+ITEMS
+  <div class="">
+    <h3>Viewable</h3>
+    <button ng-click="index.toggleSelected()">Hide</button>
+    <ul class="item-list viewable-items group">
+      <item ng-repeat="item in index.viewableItems.all()" item="item">
 
-  items
-  <ul>
-    <li ng-repeat="item in index.items.all()">
-      <figure>
-        <img ng-src="{{item.get('thumb')}}" alt="" />
-      </figure>
-      <h6>{{item.get('name')}}</h6>
-    </li>
-  </ul>
+      </item>
+    </ul>
+  </div>
+
+  <div class="">
+    <h3>Hidden</h3>
+    <button ng-click="index.toggleSelected()">Show</button>
+    <ul class="item-list hidden-items group">
+
+      <item ng-repeat="item in index.hiddenItems.all()" item="item">
+
+      </item>
+    </ul>
+  </div>
 
 </div>

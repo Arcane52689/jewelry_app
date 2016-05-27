@@ -8,7 +8,6 @@ class Api::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.create_image(params[:image])
-    byebug
     if @item.save
       render json: ItemSerializer.new(@item), status: 200
     else
@@ -29,7 +28,12 @@ class Api::ItemsController < ApplicationController
 
 
 
-
+  def toggle_viewable
+    Item.where("id IN (?)", params[:item_ids]).each do |item|
+      item.toggle_viewable
+    end
+    render json: {}, status: 200
+  end
 
   def item_params
     params.require(:item).permit(:estate_id, :name, :description, :appraised_value, :viewable)

@@ -5,5 +5,10 @@ class Item < ActiveRecord::Base
   validates :name, presence: true
 
 
+  def toggle_viewable
+    self.viewable = self.viewable ? false : true
+    self.save
+  end
+
 
 end

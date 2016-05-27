@@ -1,0 +1,32 @@
+
+.item-list {
+  width: 600px;
+  margin: auto;
+}
+
+
+.item {
+  height: 175px;
+  width: 175px;
+  float: left;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+
+
+  border: 1px solid black;
+  .preview {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+
+
+}
+
+.item.selected {
+  background: rgba(50,200,50,.6);
+}

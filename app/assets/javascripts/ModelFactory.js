@@ -567,7 +567,6 @@ ModelFactory.factory('BaseCollection', ['$http', 'BaseModel', 'Listenable', func
   BaseCollection.prototype.where = function(callback) {
     var result = this.emptyClone();
     result.adding = true;
-    debugger;
     this.models.forEach(function(model) {
       if (callback(model)) {
         result.add(model);

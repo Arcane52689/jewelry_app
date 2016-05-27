@@ -1,3 +1,9 @@
-<li>
-
+<li
+  class="item"
+  ng-class="li.selected ? 'selected' : ''"
+  ng-click="li.toggleSelected()">
+  <figure class="preview">
+    <img ng-src="{{li.item.get('thumb')}}" alt="" />
+  </figure>
+  <label class="name">{{li.item.get('name')}}</label>
 </li>

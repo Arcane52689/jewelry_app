@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* overwrite */
+body, figure, li, ul, img {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+
+  text-decoration: none;
+  box-sizing: border-box;
+  color: inherit;
+  text-align: inherit;
+  font: inherit;
+}
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+ ul, li {
+   list-style: none;
+ }
+
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
