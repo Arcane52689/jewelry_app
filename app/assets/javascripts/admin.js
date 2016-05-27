@@ -13,4 +13,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'ItemFormCtrl',
     controllerAs: "form"
   })
+  .when("/items", {
+    templateUrl: "items/item_index.html",
+    controller: 'ItemsCtrl',
+    controllerAs: 'index'
+  })
 }])

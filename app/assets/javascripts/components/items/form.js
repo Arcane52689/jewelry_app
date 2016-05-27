@@ -1,13 +1,32 @@
 
-angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', function(Item, Selected) {
+angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', '$scope', '$location', function(Item, Selected, $scope, $location) {
   this.initialize = function() {
     this.item = Selected.item || new Item({});
   }
 
   this.submit = function() {
-    this.item.attributes.estate_id = Selected.estate.id;
-    this.item.save();
+    this.item.attributes.estate_id = Selected.get('estate').id;
+    this.item.save({
+      success:function() {
+        Selected.get('estate').items.add(this.item);
+        $location.path('/items')
+      }.bind(this)
+    });
   }
+
+  this.addImage = function() {
+    var file = document.getElementById('image').files[0];
+    var reader = new FileReader();
+    var that = this;
+    reader.onloadend = function() {
+      that.item.attributes.image = reader.result;
+      $scope.$apply();
+    }
+    reader.readAsDataURL(file);
+  }
+
+
+
 
 
 

@@ -10,3 +10,5 @@ angular.module('AppModels').factory('Item', ['BaseModel', function(BaseModel) {
 
   return Item
 }])
+
+

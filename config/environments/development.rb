@@ -37,14 +37,8 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
 
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: 'estate-dvlp',
-      access_key_id: ENV.fetch('S3_ACCESS_KEY'),
-      secret_access_key: ENV.fetch('S3_SECRET_KEY'),
-    }
-  }
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

@@ -14,8 +14,10 @@ angular.module('AdminHeader').controller('HeaderCtrl', ['CurrentUser', 'Selected
     }
 
     if (this.user.administered_estates.all().length >= 1) {
-      this.selected['estate'] = this.user.administered_estates.first()
+      this.selected.set('estate', this.user.administered_estates.first());
+      this.selected.get('estate').fetch({});
     }
+
     $scope.$apply();
 
   }

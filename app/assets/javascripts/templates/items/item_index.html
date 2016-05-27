@@ -1,0 +1,13 @@
+<div class="items-container">
+
+  items
+  <ul>
+    <li ng-repeat="item in index.items.all()">
+      <figure>
+        <img ng-src="{{item.get('thumb')}}" alt="" />
+      </figure>
+      <h6>{{item.get('name')}}</h6>
+    </li>
+  </ul>
+
+</div>

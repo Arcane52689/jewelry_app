@@ -1,13 +1,22 @@
 <form class="items-form">
   <ul class="attributes">
     <li>
-      Name: <input type="text" name="name" ng-bind="form.item.attributes.name">
+      Name: <input type="text" name="name" ng-model="form.item.attributes.name">
     </li>
     <li>
-      Appraised Value: <input type="number" name="itme[value]" ng-bind="form.item.attributes.appraised_value">
+      Appraised Value: <input type="number" name="itme[value]" ng-model="form.item.attributes.appraised_value">
     </li>
     <li>
-      description: <textarea name="item[description]" rows="8" cols="40" ng-bind="form.item.attributes.description"></textarea>
+      description: <textarea name="item[description]" rows="8" cols="40" ng-model="form.item.attributes.description"></textarea>
+    </li>
+    <li>
+      <input class="upload" type="file" name="image" id="image">
+      <button ng-click="form.addImage()" name="button">Upload File</button>
+    </li>
+    <li class="preview">
+      <figure class="upload-preview">
+        <img ng-src="{{form.item.attributes.image}}" alt="" />
+      </figure>
     </li>
 
   </ul>
