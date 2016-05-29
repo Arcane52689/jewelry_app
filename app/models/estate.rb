@@ -26,6 +26,10 @@ class Estate < ActiveRecord::Base
     items.where(viewable: true)
   end
 
+  def viewable_lots
+    self.lots.includes(items: :images).where(viewable: true)
+  end
+
   def admin
     "admin"
   end

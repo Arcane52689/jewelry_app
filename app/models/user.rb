@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
     self.memberships.includes(:estate).where(is_admin: true).map(&:estate)
   end
 
+  
+
+
   def can_modify_estate(estate_id)
     membership = self.memberships.find_by(estate_id: estate_id)
     membership && membership.is_admin

@@ -7,7 +7,7 @@
     child.prototype  = new Surrogate();
   }
 
-  ModelFactory.factory('Listener', [function() {
+  ModelFactory.factory('Listener', ['$timeout', function($timeout) {
 
     var Listener = function(options) {
       this.id = options.id;
@@ -18,7 +18,7 @@
 
     Listener.prototype.call = function() {
       if (this.callback) {
-        setTimeout(this.callback);
+        $timeout(this.callback);
       }
     }
 
@@ -31,7 +31,7 @@
 
 
 
-  ModelFactory.factory('Listenable', ['Listener', function(Listener) {
+  ModelFactory.factory('Listenable', ['Listener', '$timeout', function(Listener, $timeout) {
 
 
     var Listenable = function() {
@@ -98,7 +98,7 @@
       if (this._listeners["all"] && event !== 'all') {
         this._listeners["all"].forEach(function(listener) {
           if (listener.callback) {
-            setTimeout(listener.callback)
+            $timeout(listener.callback)
           }
           if (listener.once) {
             toRemove.push(listener);

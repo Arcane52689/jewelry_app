@@ -1,5 +1,9 @@
+# require 'lot_serializer'
+
 class EstateSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bene
+  attributes :id, :name, :bene, :viewable_lots
+
+  # has_many :viewable_lots, serializer: LotSerializer
 end
 
 class AdminEstateSerializer < EstateSerializer

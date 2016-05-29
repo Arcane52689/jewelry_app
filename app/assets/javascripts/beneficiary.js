@@ -1,7 +1,6 @@
 
-window.administer = false
 
-var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'StaticControllers']);
+var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'ngDragDrop', 'StaticControllers', 'Items', 'Utilities', ]);
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

@@ -1,7 +1,10 @@
 require 'lot_serializer'
 class Api::LotsController < ApplicationController
 
-
+  def show
+    @lot = Lot.includes(items: :images).find(params[:id])
+    render json: LotSerializer.new(@lot), status: 200
+  end
 
   def create
     @lot = Lot.new(lot_params)

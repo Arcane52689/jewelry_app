@@ -1,1 +1,15 @@
 I'm a beneficiary
+<br>
+My name is {{home.user.get('name')}}
+<button ng-click="home.check()" name="button">CLICK</button>
+<br>
+Lots available for vote
+<ul class="lot-list">
+  <li class="lot-item" ng-repeat="lot in home.lots">
+    <h3>
+      {{lot.get('name')}}
+    </h3>
+    There are {{ lot.items.count();}} items available
+
+  </li>
+</ul>

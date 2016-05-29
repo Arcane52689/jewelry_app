@@ -1,6 +1,9 @@
 angular.module('AppModels').factory('User', ['BaseModel', 'BaseCollection', 'Estate', 'BaseCollection', function(BaseModel, BaseCollection, Estate) {
   var User = function(data) {
-    this.urlBase = "./api/users"
+    this.urlBase = "./api/users";
+    this.estates = new BaseCollection({
+      model: Estate
+    });
     this.initialize(data);
   }
 
@@ -15,6 +18,10 @@ angular.module('AppModels').factory('User', ['BaseModel', 'BaseCollection', 'Est
     if (data.administered_estates) {
       this.administered_estates.addModels(data.administered_estates);
       delete data.administered_estates
+    }
+    if (data.estates) {
+      this.estates.addModels(data.estates);
+      delete data.estates;
     }
     return data;
   }
