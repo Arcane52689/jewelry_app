@@ -4,6 +4,8 @@ class Estate < ActiveRecord::Base
 
   has_many :items
 
+  has_many :lots
+
   has_many :members, through: :memberships, as: :user
 
   def add_beneficiary(user)

@@ -1,4 +1,4 @@
-angular.module('Items').controller('ItemsCtrl', ['Selected', '$scope', '$http', function(Selected, $scope, $http) {
+angular.module('Items').controller('ItemsCtrl', ['Selected', '$scope', '$http', '$timeout', function(Selected, $scope, $http, $timeout) {
   this.initialize = function() {
     Selected.onChange('estate', function(estate) {
       this.items = estate.items;
@@ -34,9 +34,7 @@ angular.module('Items').controller('ItemsCtrl', ['Selected', '$scope', '$http', 
     this.hiddenItems = this.items.where(function(item) {
       return !item.get('viewable');
     })
-    if (!this.fetching) {
-      $scope.$apply();
-    }
+    $timeout(function(){});
   }
 
 

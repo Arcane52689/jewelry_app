@@ -1,0 +1,22 @@
+<li
+  class="lot-item"
+  data-drop="true"
+  jqyoui-droppable="{onDrop:'li.addDrop'}"
+
+>
+  <button
+  ng-click="li.toggleViewable();"
+  ng-class="li.lot.get('viewable') ? 'viewable' : 'hidden'"
+  name="button">
+  {{ li.lot.get('viewable') ? 'Viewable' : 'Hidden'}}
+  </button>
+  {{ li.lot.get('name') }}
+  <br>
+  length: {{li.lot.items.all().length}}
+  <ul class="item-list group">
+
+    <item ng-repeat="item in li.lot.items.all()" item="item">
+
+    </item>
+  </ul>
+</li>

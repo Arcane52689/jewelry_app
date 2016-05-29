@@ -8,4 +8,5 @@ class AdminEstateSerializer < EstateSerializer
 
   has_many :items, serializer: ItemSerializer
 
+  has_many :lots, serializer: LotSerializer
 end

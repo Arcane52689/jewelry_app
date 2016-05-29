@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show]
     resources :estates, only: [:show]
     resources :items, only: [:create, :show, :update]
+    resources :lots, only: [:create, :update]
 
 
   end

@@ -1,4 +1,4 @@
-var app = angular.module('AdminApp', ['templates', 'ngRoute', 'StaticControllers', 'Utilities', 'AdminHeader', 'Items']);
+var app = angular.module('AdminApp', ['templates', 'ngRoute', 'ngDragDrop', 'StaticControllers', 'Utilities', 'AdminHeader', 'Items']);
 
 
 window.administer = true;
@@ -17,5 +17,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     templateUrl: "items/item_index.html",
     controller: 'ItemsCtrl',
     controllerAs: 'index'
+  })
+  .when("/lots", {
+    templateUrl: "lots/lot_index.html",
+    controller: 'LotsCtrl',
+    controllerAs: 'lotIndex'
   })
 }])

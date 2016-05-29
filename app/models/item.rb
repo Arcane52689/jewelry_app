@@ -1,8 +1,11 @@
 class Item < ActiveRecord::Base
   include Imageable
   belongs_to :estate
-
+  belongs_to :lot
   validates :name, presence: true
+
+
+
 
 
   def toggle_viewable

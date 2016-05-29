@@ -17,8 +17,7 @@ class Api::ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.create_image(params[:image])
-    if @item.save
+    if @item.update(item_params)
       render json: ItemSerializer.new(@item), status: 200
     else
       render json: { errors: @item.errors.full_messages }, status: 422
@@ -36,7 +35,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:estate_id, :name, :description, :appraised_value, :viewable)
+    params.require(:item).permit(:estate_id, :name, :description, :appraised_value, :viewable, :lot_id)
   end
 
 end

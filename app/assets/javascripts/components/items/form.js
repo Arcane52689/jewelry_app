@@ -1,5 +1,5 @@
 
-angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', '$scope', '$location', function(Item, Selected, $scope, $location) {
+angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', '$scope', '$location', '$timeout', function(Item, Selected, $scope, $location, $timeout) {
   this.initialize = function() {
     this.item = Selected.item || new Item({});
   }
@@ -20,7 +20,7 @@ angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', '$scope'
     var that = this;
     reader.onloadend = function() {
       that.item.attributes.image = reader.result;
-      $scope.$apply();
+      $timeout(function(){});
     }
     reader.readAsDataURL(file);
   }

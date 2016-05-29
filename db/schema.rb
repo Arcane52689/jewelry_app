@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526210031) do
+ActiveRecord::Schema.define(version: 20160528150509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,22 @@ ActiveRecord::Schema.define(version: 20160526210031) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "estate_id",                       null: false
+    t.integer  "lot_id"
   end
 
   add_index "items", ["appraised_value"], name: "index_items_on_appraised_value", using: :btree
   add_index "items", ["estate_id"], name: "index_items_on_estate_id", using: :btree
   add_index "items", ["name"], name: "index_items_on_name", using: :btree
+
+  create_table "lots", force: :cascade do |t|
+    t.string   "name",                       null: false
+    t.boolean  "viewable",   default: false
+    t.integer  "estate_id",                  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "lots", ["estate_id"], name: "index_lots_on_estate_id", using: :btree
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",                    null: false
@@ -85,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160526210031) do
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
 
   add_foreign_key "items", "estates"
+  add_foreign_key "lots", "estates"
   add_foreign_key "memberships", "estates"
   add_foreign_key "memberships", "users"
   add_foreign_key "sessions", "users"

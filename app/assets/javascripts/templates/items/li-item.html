@@ -1,7 +1,12 @@
 <li
   class="item"
   ng-class="li.selected ? 'selected' : ''"
-  ng-click="li.toggleSelected()">
+  ng-click="li.toggleSelected()"
+  data-drag="true"
+  jqyoui-draggable
+  data-jqyoui-options="{revert: 'invalid'}"
+  data-id="{{li.item.id}}"
+  >
   <figure class="preview">
     <img ng-src="{{li.item.get('thumb')}}" alt="" />
   </figure>

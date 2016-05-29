@@ -1,4 +1,4 @@
-angular.module('AdminHeader').controller('HeaderCtrl', ['CurrentUser', 'Selected', '$scope', function(CurrentUser, Selected, $scope) {
+angular.module('AdminHeader').controller('HeaderCtrl', ['CurrentUser', 'Selected', '$scope', '$timeout', function(CurrentUser, Selected, $scope, $timeout) {
   this.initialize = function() {
     this.user = CurrentUser;
     this.selected = Selected
@@ -18,7 +18,7 @@ angular.module('AdminHeader').controller('HeaderCtrl', ['CurrentUser', 'Selected
       this.selected.get('estate').fetch({});
     }
 
-    $scope.$apply();
+    $timeout(function(){});
 
   }
 

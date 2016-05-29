@@ -4,6 +4,10 @@ angular.module('Items').controller('ItemCtrl', ['$scope', function($scope) {
     this.selected = false;
   }
 
+  this.addToLot = function(a,b,c) {
+    
+  }
+
   this.toggleSelected = function() {
     if(this.selected) {
       this.deselect();
