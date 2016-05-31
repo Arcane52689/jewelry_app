@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include Passwordable
 
   has_many :sessions
-
+  has_many :selections
   has_many :memberships
   has_many :estates, through: :memberships, as: :estate
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     self.memberships.includes(:estate).where(is_admin: true).map(&:estate)
   end
 
-  
+
 
 
   def can_modify_estate(estate_id)

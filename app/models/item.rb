@@ -2,6 +2,8 @@ class Item < ActiveRecord::Base
   include Imageable
   belongs_to :estate
   belongs_to :lot
+  has_many :selections
+
   validates :name, presence: true
 
 

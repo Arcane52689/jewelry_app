@@ -8,6 +8,7 @@ angular.module("Items").controller('SelectionCtrl', ['Lot', '$routeParams', '$ti
 
   this.onDrop = function(a, b) {
     $timeout();
+    debugger;
   }
 
 
