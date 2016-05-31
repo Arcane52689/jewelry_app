@@ -1,0 +1,28 @@
+<div class="">
+
+Currently Deciding on {{selection.lot.get('name')}}:
+  Order the following items from 1 through {{selection.lot.items.all().length}};
+  <ul class="item-list group"
+  data-drop="true"
+  jqyoui-droppable="{onDrop:'selection.onDrop'}"
+  >
+    <li ng-repeat="item in selection.lot.items.all()"
+      class="item"
+      data-drag="true"
+      jqyoui-draggable
+      data-jqyoui-options="{revert: 'invalid'}"
+
+      >
+      <figure class="preview">
+        <img ng-src="{{item.get('thumb')}}" alt="" />
+      </figure>
+      <h3>{{item.get('name')}}</h3>
+
+
+
+    </li>
+
+
+  </ul>
+</div>
+
