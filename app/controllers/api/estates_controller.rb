@@ -1,4 +1,4 @@
-require "estate_serializer"
+
 class Api::EstatesController < ApplicationController
 
   before_action :user_belongs_to_estate

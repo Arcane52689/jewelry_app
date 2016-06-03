@@ -1,6 +1,7 @@
 class Lot < ActiveRecord::Base
 
   has_many :items
+  has_many :selections
   belongs_to :estate
 
 

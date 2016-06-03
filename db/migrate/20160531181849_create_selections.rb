@@ -3,6 +3,8 @@ class CreateSelections < ActiveRecord::Migration
     create_table :selections do |t|
       t.references :user, index: true, foreign_key: true, null: false
       t.references :item, index: true, foreign_key: true, null: false
+      t.references :lot, index: true, foreign_key: true, null: false
+
       t.integer :value, null: false
       t.text :reason
       t.timestamps null: false

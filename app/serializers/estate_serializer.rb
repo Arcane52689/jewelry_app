@@ -6,7 +6,7 @@ class EstateSerializer < ActiveModel::Serializer
   # has_many :viewable_lots, serializer: LotSerializer
 end
 
-class AdminEstateSerializer < EstateSerializer
+class AdminEstateSerializer < ActiveModel::Serializer
 
   attributes :name, :id, :admin
 

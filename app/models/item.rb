@@ -3,7 +3,6 @@ class Item < ActiveRecord::Base
   belongs_to :estate
   belongs_to :lot
   has_many :selections
-
   validates :name, presence: true
 
 

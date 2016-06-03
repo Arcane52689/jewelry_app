@@ -23,15 +23,19 @@ angular.module('Items').controller('LotsCtrl', ['Lot', 'Selected', '$scope', '$t
     this.unassignedItems = this.estate.items.where(function(item) {
       return !item.attributes.lot_id;
     }).all();
-    console.log('what');
     $timeout(function() {});
   }
 
 
   this.assignEstate = function() {
+
     this.estate = Selected.get('estate');
-    this.lots = Selected.get('estate').lots;
-    this.lots.on('add', this.updateItems.bind(this))
+    this.estate.fetch({
+      success: function() {
+        $timeout();
+      }
+    })
+    this.estate.lots.on('add', this.updateItems.bind(this))
 
   }
 

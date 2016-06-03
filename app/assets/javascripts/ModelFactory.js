@@ -525,9 +525,13 @@ ModelFactory.factory('BaseCollection', ['$http', 'BaseModel', 'Listenable', func
 
 /* search function */
 
+
+
   BaseCollection.prototype.find = function(id) {
     return this.modelsById[id];
   }
+
+
 
   BaseCollection.prototype.findOrFetch = function(id) {
     var model = this.find(id);

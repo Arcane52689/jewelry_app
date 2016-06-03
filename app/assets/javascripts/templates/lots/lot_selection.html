@@ -1,0 +1,29 @@
+<div class="">
+<ul class="selections group">
+  <selection-li ng-repeat="selection in selection.selections.all()"
+  selection="selection"
+  >
+
+  </selection-li>
+</ul>
+
+
+Currently Deciding on {{selection.lot.get('name')}}:
+  Unassigned Items. Drag the items and drop them in the boxes in the order you would like them.
+  <ul class="item-list group"
+  data-drop="true"
+  jqyoui-droppable="{onDrop:'selection.onDrop'}"
+  >
+    <item ng-repeat="item in selection.unassignedItems.all()"
+      item="item"
+      >
+
+    </item>
+
+
+
+
+
+  </ul>
+</div>
+

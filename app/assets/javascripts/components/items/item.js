@@ -5,7 +5,7 @@ angular.module('Items').controller('ItemCtrl', ['$scope', function($scope) {
   }
 
   this.addToLot = function(a,b,c) {
-    
+
   }
 
   this.toggleSelected = function() {

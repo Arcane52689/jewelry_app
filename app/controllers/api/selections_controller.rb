@@ -1,4 +1,4 @@
-class Api::SectionsController < ApplicationController
+class Api::SelectionsController < ApplicationController
 
 
   def create

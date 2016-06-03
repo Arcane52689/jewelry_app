@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20160531181849) do
   create_table "selections", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.integer  "item_id",    null: false
+    t.integer  "lot_id",     null: false
     t.integer  "value",      null: false
     t.text     "reason"
     t.datetime "created_at", null: false
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 20160531181849) do
   end
 
   add_index "selections", ["item_id"], name: "index_selections_on_item_id", using: :btree
+  add_index "selections", ["lot_id"], name: "index_selections_on_lot_id", using: :btree
   add_index "selections", ["user_id", "item_id"], name: "index_selections_on_user_id_and_item_id", unique: true, using: :btree
   add_index "selections", ["user_id"], name: "index_selections_on_user_id", using: :btree
 
@@ -113,6 +115,7 @@ ActiveRecord::Schema.define(version: 20160531181849) do
   add_foreign_key "memberships", "estates"
   add_foreign_key "memberships", "users"
   add_foreign_key "selections", "items"
+  add_foreign_key "selections", "lots"
   add_foreign_key "selections", "users"
   add_foreign_key "sessions", "users"
 end

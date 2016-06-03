@@ -10,8 +10,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controllerAs: 'home'
   })
   .when('/lots/:id', {
-    templateUrl: 'lots/selection.html',
-    controller: 'SelectionCtrl',
+    templateUrl: 'lots/lot_selection.html',
+    controller: 'LotSelectionCtrl',
     controllerAs: 'selection'
   })
 }])

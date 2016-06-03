@@ -1,8 +1,9 @@
 class Selection < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
+  belongs_to :lot
 
-  validates :unique_selection
+  validate :unique_selection
 
 
 

@@ -23,6 +23,10 @@ angular.module('AppModels').factory('Estate', ['BaseModel', 'BaseCollection', 'L
       this.lots.addModels(data.viewable_lots);
       delete data.viewable_lots;
     }
+    if (data.lots) {
+      this.lots.addModels(data.lots);
+      delete data.lots;
+    }
 
 
     return data;
