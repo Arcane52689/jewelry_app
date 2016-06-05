@@ -5,7 +5,7 @@ angular.module('Items').controller('LotCtrl', ['$scope', function($scope) {
 
   this.addDrop = function(a,b,c) {
     b.helper.scope().item.addToLot(this.lot.id);
-    $scope.$emit("swap")
+    $scope.$emit("swap");
   }
 
   this.toggleViewable = function() {

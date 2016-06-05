@@ -22,7 +22,7 @@ class Api::SelectionsController < ApplicationController
 
 
   def selection_params
-    params.require(:selection).permit(:item_id, :value, :reason)
+    params.require(:selection).permit(:item_id, :value, :reason, :lot_id)
   end
 
 end

@@ -5,7 +5,8 @@ angular.module('AppModels').factory('User', ['BaseModel', 'BaseCollection', 'Est
       model: Estate
     });
     this.selections = new BaseCollection({
-      model: Selection
+      model: Selection,
+      comparator: 'value'
     })
     this.initialize(data);
   }

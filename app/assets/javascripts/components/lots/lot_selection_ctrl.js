@@ -20,15 +20,17 @@ angular.module("Items").controller('LotSelectionCtrl', ['Lot', '$routeParams', '
     this.selections = CurrentUser.selections.where(function(selection) {
       return selection.attributes.lot_id === this.lot.id
     }.bind(this));
-    if (this.selections.none()) {
-      for (var i = 1; i < 4; i++) {
-        this.selections.addModel({
-          user_id: CurrentUser.id,
-          lot_id: this.lot.id,
-          value: i
-        })
+    for (var i = 1; i < 4; i++) {
+      var params = {
+        user_id: CurrentUser.id,
+        lot_id: this.lot.id,
+        value: i
+      }
+      if (this.selections.none(function(s) {return s.attributes.value === i})) {
+        this.selections.addModel(params)
       }
     }
+    this.selections.sort();
   }
 
   this.assignSelections = function() {

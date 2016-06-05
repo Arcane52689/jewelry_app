@@ -1,14 +1,16 @@
 angular.module('Items').controller('SelectionCtrl', ['Selection', 'CurrentUser', '$scope', '$timeout', function(Selection, CurrentUser, $scope, $timeout) {
   this.initialize = function() {
-    this.selection = $scope.selection
+    this.selection = $scope.selection;
   }
   this.removeItem = function() {
     this.selection.attributes.item_id = null;
+    this.selection.item = undefined;
     this.selection.save();
+    $scope.$emit('select');
+
   }
 
   this.addItem = function(a, b) {
-
     this.selection.attributes.item_id = b.helper.data('id');
     this.selection.save();
     $scope.$emit('select')

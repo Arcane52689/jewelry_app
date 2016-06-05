@@ -1,6 +1,6 @@
 
 
-var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'ngDragDrop', 'StaticControllers', 'Items', 'Utilities', ]);
+var app = angular.module('BeneficiaryApp', ['templates', 'ngRoute', 'ngDragDrop', 'StaticControllers', 'Items', 'Utilities', 'BeneHeader' ]);
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

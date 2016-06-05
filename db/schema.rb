@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160531181849) do
 
   create_table "selections", force: :cascade do |t|
     t.integer  "user_id",    null: false
-    t.integer  "item_id",    null: false
+    t.integer  "item_id"
     t.integer  "lot_id",     null: false
     t.integer  "value",      null: false
     t.text     "reason"
