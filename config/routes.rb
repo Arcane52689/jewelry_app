@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :show, :update]
     resources :lots, only: [:create, :update, :show]
     resources :selections, only: [:create, :update]
+    resources :categories, only: [:create, :index]
 
   end
 
