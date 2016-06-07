@@ -1,10 +1,10 @@
 class Estate < ActiveRecord::Base
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
 
   has_many :items
 
-  has_many :lots
+  has_many :lots, dependent: :destroy
 
   has_many :members, through: :memberships, as: :user
 

@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531181849) do
+ActiveRecord::Schema.define(version: 20160607202935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
 
   create_table "estates", force: :cascade do |t|
     t.string   "name",       null: false
@@ -98,6 +106,17 @@ ActiveRecord::Schema.define(version: 20160531181849) do
   add_index "sessions", ["token"], name: "index_sessions_on_token", using: :btree
   add_index "sessions", ["user_id"], name: "index_sessions_on_user_id", using: :btree
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "taggable_id",   null: false
+    t.string   "taggable_type", null: false
+    t.integer  "category_id",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "taggings", ["category_id"], name: "index_taggings_on_category_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type"], name: "index_taggings_on_taggable_id_and_taggable_type", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name",                            null: false
     t.string   "password_digest",                 null: false
@@ -118,4 +137,5 @@ ActiveRecord::Schema.define(version: 20160531181849) do
   add_foreign_key "selections", "lots"
   add_foreign_key "selections", "users"
   add_foreign_key "sessions", "users"
+  add_foreign_key "taggings", "categories"
 end
