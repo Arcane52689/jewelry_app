@@ -1,6 +1,7 @@
 angular.module('Items').controller('LotCtrl', ['$scope', function($scope) {
   this.initialize = function() {
     this.lot = $scope.lot;
+    this.minimized = false;
   }
 
   this.addDrop = function(a,b,c) {
@@ -12,6 +13,9 @@ angular.module('Items').controller('LotCtrl', ['$scope', function($scope) {
     this.lot.toggleViewable();
   }
 
+  this.toggleMinimized = function() {
+    this.minimized = this.minimized ? false : true;
+  }
 
   this.initialize();
 }])

@@ -2,15 +2,17 @@
   data-drop="true"
   jqyoui-droppable="{onDrop:'li.addItem'}"
 >
-<button ng-click="li.removeItem()" name="button">Remove</button>
-  <div class="item" ng-if="li.hasItem()">
-    <figure class="preview">
+<button ng-click="li.removeItem()" class="remove">X</button>
+  <div class="item" >
+    <figure class="preview" ng-if="li.hasItem()">
       <img ng-src="{{li.selection.item.get('thumb')}}" alt="" />
     </figure>
-    {{li.selection.item.get('name')}}
+    <label class="name" ng-if="li.hasItem()">
+      {{li.selection.item.get('name')}}
+    </label>
   </div>
+  <h3 class="value">{{ li.selection.attributes.value }}</h3 class="value">
 
 
-  <h4> number {{ li.selection.attributes.value }}</h4>
 
 </li>

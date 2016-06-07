@@ -1,0 +1,89 @@
+.title {
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid black;
+  display: block;
+  margin: 5px auto;
+}
+
+.title.small {
+  font-size: 16px;
+  width: 200px;
+}
+
+.title.medium {
+  width: 300px;
+  font-size: 24px;
+}
+.title.large {
+  font-size: 36px;
+  width: 400px;
+}
+
+.selections {
+  border: 5px solid black;
+  width: 900px;
+  height: 350px;
+  margin: auto;
+  padding: 25px;
+  text-align: center;
+  background: rgba(100, 200, 150, .7);
+
+
+}
+
+
+.selection-box {
+  padding: 5px;
+  border: 1px solid black;
+  float: left;
+  width: 250px;
+  height: 300px;
+  margin-left: 20px;
+
+  .remove {
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 1px 1px black;
+    padding: 5px 10px;
+    // border: 1px solid black;
+    border-radius: 50%;
+    background: rgb(200,50,10);
+    color: white;
+
+  }
+
+  .value {
+    font-size: 36px;
+    font-weight: 700;
+
+  }
+
+  .item {
+    margin:auto;
+    float: none;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+
+
+.lot-selection {
+  .item-selection {
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    width: 1000px;
+
+    .instructions {
+      font-size: 16px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .item-list {
+      width: 1000px;
+    }
+  }
+}

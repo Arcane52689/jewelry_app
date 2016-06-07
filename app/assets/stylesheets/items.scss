@@ -1,17 +1,4 @@
 
-.selections {
-  border: 1px solid black;
-  padding: 20px;
-
-}
-
-
-.selection-box {
-  border: 1px solid black;
-  float: left;
-  width: 200px;
-  margin-left: 20px;
-}
 
 
 .lot-item {
@@ -35,13 +22,15 @@
 .item {
   height: 175px;
   width: 175px;
+  font-weight: 700;
+  font-size: 16px;
   float: left;
   padding: 5px;
   text-align: center;
   margin: 10px;
 
-
   border: 1px solid black;
+
   .preview {
     width: 150px;
     height: 150px;
@@ -56,4 +45,63 @@
 
 .item.selected {
   background: rgba(50,200,50,.6);
+}
+
+.item-form {
+  border: 3px solid black;
+  border-radius: 20px;
+  width: 600px;
+  margin: auto;
+  padding: 15px;
+
+
+  .submit {
+    display: block;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+
+    width: 100px;
+    padding: 5px 10px;
+    margin: auto;
+  }
+
+  .attributes {
+    width: 400px;
+    margin: 15px auto;
+
+    .upload {
+      cursor: pointer;
+      display: block;
+      float: none;
+      width: 100px;
+      margin: auto;
+    }
+
+    .upload-preview {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      display: block;
+      overflow: hidden;
+    }
+
+    li {
+      margin-bottom: 10px;
+      label {
+        float: left;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .field {
+        float: right;
+        width: 200px;
+        border: 1px solid black;
+        padding: 3px 5px;
+      }
+    }
+  }
 }

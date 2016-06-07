@@ -1,17 +1,25 @@
-<form class="items-form">
+<form class="item-form">
+  <h2 class="large title">Adding an item</h2>
   <ul class="attributes">
-    <li>
-      Name: <input type="text" name="name" ng-model="form.item.attributes.name">
+    <li class="group">
+      <label>Name:</label>
+      <input class="field" type="text" name="name" ng-model="form.item.attributes.name">
     </li>
-    <li>
-      Appraised Value: <input type="number" name="itme[value]" ng-model="form.item.attributes.appraised_value">
+    <li class="group">
+      <label>Appraised Value:</label>
+      <input class="field" type="number" name="itme[value]" ng-model="form.item.attributes.appraised_value">
     </li>
-    <li>
-      description: <textarea name="item[description]" rows="8" cols="40" ng-model="form.item.attributes.description"></textarea>
+    <li class="group">
+      <label>Description:</label>
+       <textarea class="field" name="item[description]" rows="8" cols="40" ng-model="form.item.attributes.description"></textarea>
     </li>
-    <li>
-      <input class="upload" type="file" name="image" id="image">
-      <button ng-click="form.addImage()" name="button">Upload File</button>
+    <li class="group">
+      <label for="image-upload" class="upload">Upload</label>
+      <input type="file" id="image-upload"
+      custom-on-change="form.addImage"
+      hidden="true"
+      >
+
     </li>
     <li class="preview">
       <figure class="upload-preview">

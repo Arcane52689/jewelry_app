@@ -4,6 +4,10 @@
   jqyoui-droppable="{onDrop:'li.addDrop'}"
 
 >
+  <button ng-click="li.toggleMinimized()">
+    {{li.minimized ? 'Maximize' : 'Minimize'}}
+  </button>
+
   <button
   ng-click="li.toggleViewable();"
   ng-class="li.lot.get('viewable') ? 'viewable' : 'hidden'"
@@ -12,8 +16,8 @@
   </button>
   {{ li.lot.get('name') }}
   <br>
-  length: {{li.lot.items.all().length}}
-  <ul class="item-list group">
+   {{li.lot.items.all().length}} items in this lot
+  <ul class="item-list group" ng-hide="li.minimized">
 
     <item ng-repeat="item in li.lot.items.all()" item="item">
 

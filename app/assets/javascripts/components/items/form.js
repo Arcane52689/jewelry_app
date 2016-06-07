@@ -13,16 +13,20 @@ angular.module("Items").controller('ItemFormCtrl', ['Item', 'Selected', '$scope'
       }.bind(this)
     });
   }
-
+  var that = this;
   this.addImage = function() {
-    var file = document.getElementById('image').files[0];
+    var file = document.getElementById('image-upload').files[0];
     var reader = new FileReader();
-    var that = this;
     reader.onloadend = function() {
-      that.item.attributes.image = reader.result;
-      $timeout(function(){});
-    }
+      debugger;
+      that.assignImage(reader.result);
+    }.bind(this);
     reader.readAsDataURL(file);
+  }
+
+  this.assignImage = function(image) {
+    this.item.attributes.image = image;
+    $timeout(function(){});
   }
 
 
