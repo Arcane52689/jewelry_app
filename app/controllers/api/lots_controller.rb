@@ -9,7 +9,7 @@ class Api::LotsController < ApplicationController
   def create
     @lot = Lot.new(lot_params)
     if @lot.save
-      render json: LotSerializer.new(@lot)
+      render json: AdminLotSerializer.new(@lot)
     else
       render json: {errors: @lot.errors.full_messages}
     end
@@ -19,7 +19,7 @@ class Api::LotsController < ApplicationController
   def update
     @lot = Lot.find(params[:id])
     if @lot.update(lot_params)
-      render json: LotSerializer.new(@lot)
+      render json: AdminLotSerializer.new(@lot)
     else
       render json: {errors: @lot.errors.full_messages}
     end

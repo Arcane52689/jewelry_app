@@ -1,6 +1,7 @@
 <div class="lot-assignment">
 
   <h1 class="title large">Lot Assignment</h1>
+  <button ng-click="lotIndex.addLot()" name="button">Add Lot</button>
   <ul class="lots-list">
     <lot-li ng-repeat="lot in lotIndex.estate.lots.all();" lot="lot">
     </lot-li>

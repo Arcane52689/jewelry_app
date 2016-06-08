@@ -9,6 +9,20 @@ angular.module('Items').controller('LotsCtrl', ['Lot', 'Selected', '$scope', '$t
   }
 
 
+  this.addLot = function() {
+    var name = 'Lot ' + (this.estate.lots.all().length  + 1)
+    var lot = new Lot({
+      estate_id: this.estate.id,
+      name: name,
+      viewable: false
+    })
+    lot.save({
+      success: function() {
+        this.estate.lots.add(lot);
+        this.updateItems();
+      }.bind(this)
+    })
+  }
 
 
   this.updateItems = function() {

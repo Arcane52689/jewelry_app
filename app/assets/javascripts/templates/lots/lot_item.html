@@ -4,17 +4,25 @@
   jqyoui-droppable="{onDrop:'li.addDrop'}"
 
 >
-  <button ng-click="li.toggleMinimized()">
+  <button ng-click="li.toggleMinimized()"
+  class="toggle minimize"
+  ng-class="li.minimized ? 'minimized' : 'maximized'"
+  >
     {{li.minimized ? 'Maximize' : 'Minimize'}}
   </button>
-
+  <label class="lot-name" ng-click="li.beginEdit()" ng-hide="li.editing">
+    {{ li.lot.get('name') }}
+  </label>
+  <label class="lot-name" ng-show="li.editing">
+    <input type="text" name="lot[name]" ng-model="li.lot.attributes.name" ng-blur="li.finishEdit()" ng-enter="li.finishEdit()">
+  </label>
   <button
   ng-click="li.toggleViewable();"
+  class="toggle viewable-toggle"
   ng-class="li.lot.get('viewable') ? 'viewable' : 'hidden'"
   name="button">
   {{ li.lot.get('viewable') ? 'Viewable' : 'Hidden'}}
   </button>
-  {{ li.lot.get('name') }}
   <br>
    {{li.lot.items.all().length}} items in this lot
   <ul class="item-list group" ng-hide="li.minimized">
