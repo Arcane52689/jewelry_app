@@ -39,6 +39,17 @@ angular.module('Items').controller('LotsCtrl', ['Lot', 'Selected', '$scope', '$t
 
   }
 
+  this.unassignItem = function(a, b) {
+
+    var item = this.estate.items.find(b.helper.data("id"));
+    item.attributes.lot_id = null
+    item.save({
+      success: function() {
+        this.updateItems();
+      }.bind(this)
+    })
+
+  }
 
 
   this.initialize();
